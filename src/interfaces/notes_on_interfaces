@@ -1,0 +1,16 @@
+***** Java multiple-inheritance-of-default-methods question *****
+
+
+If a class implements two interfaces that define the same default method,
+the code will not compile unless the class explicitly resolves the conflict. See example.
+
+| Scenario                                  | Result               |
+| ----------------------------------------- | -------------------- |
+| Two interfaces define same default method | ❌ Compile-time error |
+| Class overrides the method                | ✅ Class decides      |
+| Class calls `Interface.super.method()`    | ✅ Explicit choice    |
+| Superclass defines method                 | ✅ Superclass wins    |
+
+
+Class wins over interface
+If a superclass defines the method, it overrides all interface default methods, even if the interfaces have defaults.
