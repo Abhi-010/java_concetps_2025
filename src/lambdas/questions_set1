@@ -1,0 +1,23 @@
+1. Write a lambda expression to print "Lambda is running" using the Runnable interface.
+2. Write a lambda expression to sort a list of integers in descending order using Comparator<Integer>.
+3. Write a lambda expression that checks whether a string is empty using Predicate<String>.
+4. Write a Function<String, String> that converts a given string to uppercase.
+5.Write a lambda using Consumer<Integer> that prints the square of a number.
+6. Write a lambda using BiFunction<Integer, Integer, Integer> to add two integers.
+
+//Use Lambda to Filter Even Numbers from a List
+7. Given a list of integers, write a lambda with stream().filter(...) to print only even numbers.
+
+//Q8. Using removeIf() with Lambda
+//You have a list of names. Write a lambda expression to remove all names that start with "A".
+ //Q9. Custom Functional Interface
+ //Define a functional interface called StringLengthFinder with a method int findLength(String s), and write a lambda expression for it.
+       /*
+        Q10. Compose Functions
+        Write two lambda expressions using Function<Integer, Integer>:
+
+        One that multiplies a number by 2.
+
+        Another that adds 10.
+        Then compose them such that input 5 gives (5 * 2) + 10 = 20.
+         */
