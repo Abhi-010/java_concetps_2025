@@ -1,6 +1,4 @@
-package scaler_questions.Scaler;
-
-import myPackage.codechef.practice.INTEST;
+package dsa.scaler;
 
 import java.util.HashMap;
 import java.util.Map;

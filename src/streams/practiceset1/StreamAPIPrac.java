@@ -28,7 +28,7 @@ public class StreamAPIPrac {
 
         System.out.println("--------------------");
 
-        List<Java8_coding.Student> studentList = List.of(new Java8_coding.Student("Abhi", 31), new Student("Aana", 40), new Student("Bob",55));
+        List<Student> studentList = List.of(new Student("Abhi", 31), new Student("Aana", 40), new Student("Bob",55));
 
         Map<Character, List<Student>> collect1 =
                 studentList.stream().

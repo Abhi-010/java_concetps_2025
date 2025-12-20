@@ -1,6 +1,7 @@
 package streams.timbachuka;
 
-import streams_timbachuka.mapOperation.Seat;
+
+import streams.timbachuka.mapOperation.Seat;
 
 import java.util.Comparator;
 import java.util.List;

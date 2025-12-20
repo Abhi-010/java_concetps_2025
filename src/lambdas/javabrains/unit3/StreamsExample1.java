@@ -1,6 +1,6 @@
 package lambdas.javabrains.unit3;
 
-import io.javabrains.common.Person;
+import lambdas.javabrains.common.*;
 
 import java.util.Arrays;
 import java.util.List;

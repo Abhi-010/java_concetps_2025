@@ -1,6 +1,5 @@
 package lambdas.javabrains.unit1;
-
-import io.javabrains.common.Person;
+import lambdas.javabrains.common.Person;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -17,7 +16,7 @@ public class Unit1ExerciseSolutionJava7 {
 				new Person("Charlotte", "Bronte", 45),
 				new Person("Matthew", "Arnold", 39)
 				);
-		
+
 		// Step 1: Sort list by last name
 		Collections.sort(people, new Comparator<Person>() {
 			@Override
@@ -25,11 +24,11 @@ public class Unit1ExerciseSolutionJava7 {
 				return o1.getLastName().compareTo(o2.getLastName());
 			}
 		});
-		
+
 		// Step 2: Create a method that prints all elements in the list
 		System.out.println("Printing all persons");
 		printAll(people);
-		
+
 		// Step 3: Create a method that prints all people that have last name beginning with C
 		System.out.println("Printing all persons with last name beginning with C");
 		printConditionally(people, new Condition() {
@@ -47,7 +46,7 @@ public class Unit1ExerciseSolutionJava7 {
 				return p.getFirstName().startsWith("C");
 			}
 		});
-		
+
 	}
 
 	private static void printConditionally(List<Person> people, Condition condition) {
@@ -55,16 +54,16 @@ public class Unit1ExerciseSolutionJava7 {
 			if (condition.test(p)) {
 				System.out.println(p);
 			}
-			
+
 		}
-		
+
 	}
 
 	private static void printAll(List<Person> people) {
 		for (Person p : people) {
 			System.out.println(p);
 		}
-		
+
 	}
 
 }

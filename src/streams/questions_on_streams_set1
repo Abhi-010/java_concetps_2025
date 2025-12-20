@@ -1,0 +1,49 @@
+***** Date : 19th Dec 2025 ****
+
+1. Basic Filtering and Transformation
+Given a List<String>, filter out strings that start with the letter "A" (case-sensitive) and 
+convert the remaining strings to uppercase. Return the result as a List.
+Focus: filter(), map(), collect().
+
+2. Squaring and Summing
+Given a List<Integer>, find the sum of the squares of all even numbers in the list.
+
+Focus: filter(), mapToInt(), sum().
+
+3. Flattening a Nested List
+You have a List<List<Integer>>.
+Write a stream to flatten this into a single List<Integer> containing all the numbers from the nested lists.
+
+Focus: flatMap().
+
+4. Find the Maximum Value
+Given a List<Employee>, find the Employee object with the highest salary. If the list is empty, return an empty Optional.
+
+Focus: max(), Comparator.comparingDouble().
+
+5. Counting Occurrences (Frequency Map)
+Given a String (e.g., "apple banana apple cherry"), split it by spaces and use streams to create a Map<String, Long> 
+where the key is the word and the value is its frequency.
+Focus: Collectors.groupingBy(), Collectors.counting().
+
+6. Removing Duplicates and Sorting
+Given an array of integers int[] nums = {5, 2, 8, 2, 5, 1}, return a sorted list of unique numbers.
+
+Focus: Arrays.stream(), distinct(), sorted().
+
+7. String Joining
+Given a List<String> of names, create a single String that joins them all together, separated by a comma and a space, 
+and enclosed in square brackets (e.g., "[John, Jane, Doe]").
+Focus: Collectors.joining(delimiter, prefix, suffix).
+
+8. Grouping by Property
+Given a List<Student>, group the students by their "Grade" (e.g., A, B, C). The result should be a Map<String, List<Student>>.
+Focus: Collectors.groupingBy().
+
+9. Check for a Condition (Short-circuiting)
+Given a List<Integer>, write a stream that returns true if all elements in the list are greater than 10.
+Focus: allMatch().
+
+10. Extracting Map Keys to a List
+Given a Map<Integer, String> map, extract all the values (Strings) that correspond to an even key, and collect them into a List.
+Focus: entrySet().stream(), filter(), map().

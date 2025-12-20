@@ -1,4 +1,4 @@
-package scaler_questions;
+package dsa.scaler_questions;
 
 import java.util.Arrays;
 import java.util.LinkedList;
@@ -8,7 +8,7 @@ import java.util.Stack;
 public class question1 {
     public static void main(String[] args) {
         Queue<Integer> q = new LinkedList<>();
-        q.
+
         int[] ans = nextGreater(new int[] {34,35,27,42,5,28,39,20,28});
         for(int i = 0 ; i < ans.length ; i++){
             System.out.print(ans[i] + " ");

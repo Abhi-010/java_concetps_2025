@@ -1,6 +1,7 @@
 package lambdas.javabrains.unit1;
 
-import io.javabrains.common.Person;
+
+import lambdas.javabrains.common.Person;
 
 import java.util.Arrays;
 import java.util.Collections;
@@ -28,10 +29,10 @@ public class Unit1ExerciseSolutionJava8 {
 		// Step 3: Create a method that prints all people that have last name beginning with C
 
 		System.out.println("Printing all persons with last name beginning with C");
-		printConditionally(people, p -> p.getLastName().startsWith("C"));
+		printConditionally(people, p -> p.getFirstName().startsWith("C"));
 
 		System.out.println("Printing all persons with first name beginning with C");
-		
+
 		printConditionally(people, p -> p.getFirstName().startsWith("C"));
 		
 	}
