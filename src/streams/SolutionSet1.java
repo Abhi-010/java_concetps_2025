@@ -80,5 +80,69 @@ Focus: Collectors.groupingBy(), Collectors.counting().
         collect.forEach((key,value)-> System.out.println(key + " : "+ value));
 
 
+        /*
+6. Removing Duplicates and Sorting
+Given an array of integers int[] nums = {5, 2, 8, 2, 5, 1}, return a sorted list of unique numbers.
+         */
+        int[] nums = {5, 2, 8, 2, 5, 1};
+        nums = Arrays.stream(nums).distinct().sorted().toArray();
+        System.out.println(Arrays.toString(nums));
+
+        /*
+        7. String Joining
+Given a List<String> of names, create a single String that joins them all together, separated by a comma and a space,
+and enclosed in square brackets (e.g., "[John, Jane, Doe]").
+Focus: Collectors.joining(delimiter, prefix, suffix).
+         */
+
+        List<String> names = Arrays.asList("John", "Jane", "Doe");
+
+        String collect1 = names.stream().collect(Collectors.joining(",", "[", "]"));
+        System.out.println("collect1 " + collect1);
+
+        /*
+        8. Grouping by Property
+Given a List<Student>, group the students by their "Grade" (e.g., A, B, C). The result should be a Map<String, List<Student>>.
+Focus: Collectors.groupingBy().
+         */
+
+        Student s1 = new Student("Abhi","A");
+        Student s2 = new Student("Bob", "B");
+        Student s3 = new Student("Chris", "A");
+
+        List<Student> studentList = Arrays.asList(s1,s2,s3);
+
+        Map<String, List<Student>> collect2 = studentList.stream().collect(Collectors.groupingBy(student -> student.getGrade()));
+
+        collect2.forEach((key,value)-> System.out.println(key + " : " + value.toString()));
+
+
+        /*
+        9. Check for a Condition (Short-circuiting)
+Given a List<Integer>, write a stream that returns true if all elements in the list are greater than 10.
+Focus: allMatch().
+         */
+
+        List<Integer> duplicates = Arrays.asList(3,4,5,9,2);
+        boolean b = duplicates.stream().allMatch(i -> i > 10);
+        System.out.println(b);
+
+
+        /*
+        10. Extracting Map Keys to a List
+Given a Map<Integer, String> map, extract all the values (Strings) that correspond to an even key, and collect them into a List.
+Focus: entrySet().stream(), filter(), map().
+         */
+
+        Map<Integer,String> map = new HashMap<>();
+        map.put(1,"string1");
+        map.put(2,"string2");
+        map.put(3,"string3");
+
+        List<String> stringList1 = map.entrySet().stream()
+                                .filter(entry -> entry.getKey() % 2 == 0)
+                                .map(Map.Entry::getValue).toList();
+
+        stringList1.forEach(System.out::println);
     }
 }
