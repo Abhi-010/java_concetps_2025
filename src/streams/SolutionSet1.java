@@ -144,5 +144,25 @@ Focus: entrySet().stream(), filter(), map().
                                 .map(Map.Entry::getValue).toList();
 
         stringList1.forEach(System.out::println);
+
+
+        //11. you have list<Employee>. find duplicates in the list for the employee which has same name.
+
+        employeeList = new ArrayList<>();
+        employeeList.add(new Employee("Abhisek", 34, 100));
+        employeeList.add(new Employee("Ganesh", 31, 1000));
+        employeeList.add(new Employee("Ganesh", 33, 1000));
+        employeeList.add(new Employee("Vara", 21, 100));
+
+        employeeList.add(new Employee("Vara", 22, 100));
+
+        employeeList.forEach(employee -> System.out.print(employee + " "));
+
+        Map<String, Long> collect3 =
+                employeeList.stream().map(Employee::getName).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+
+        collect3.forEach((key,value)-> System.out.println(key + " : "+ value));
+
+
     }
 }

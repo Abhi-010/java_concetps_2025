@@ -1,4 +1,4 @@
-package multithreading.OperatingSystem_2.MergeSort;
+package multithreading.operatingsystem_archival.mergesort_archival;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,26 +8,30 @@ import java.util.concurrent.Future;
 
 public class Sorter implements Callable<List<Integer>> {
 
-    private List<Integer> arrayToSort;
+    private List<Integer> arrayToSort ;
     private ExecutorService executorService;
-
-    public Sorter(List<Integer> arrayToSort, ExecutorService executorService) {
+    public Sorter(List<Integer> arrayToSort, ExecutorService executorService){
         this.arrayToSort = arrayToSort;
         this.executorService = executorService;
     }
 
     @Override
     public List<Integer> call() throws Exception {
-        int n = arrayToSort.size();
-        if (n <= 1) {
+
+        if(arrayToSort.size() <= 1){
             return arrayToSort;
         }
-        int mid = n / 2;   // 0 -> 0 ; 1 -> 0; 2 -> 1; 3 -> 1
+
+        int n = arrayToSort.size();
+        int mid = n/2;
+
         List<Integer> leftArray = new ArrayList<>();
         List<Integer> rightArray = new ArrayList<>();
+
         for (int i = 0; i < mid; ++i) {
             leftArray.add(arrayToSort.get(i));
         }
+
         for (int i = mid; i < n; ++i) {
             rightArray.add(arrayToSort.get(i));
         }
@@ -66,8 +70,6 @@ public class Sorter implements Callable<List<Integer>> {
             answer.add(rightSorted.get(j));
             j++;
         }
-
-        System.out.println(" Printed via Thread : [" + Thread.currentThread().getName() + "]");
 
         return answer;
     }

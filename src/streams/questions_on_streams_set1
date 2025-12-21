@@ -47,3 +47,5 @@ Focus: allMatch().
 10. Extracting Map Keys to a List
 Given a Map<Integer, String> map, extract all the values (Strings) that correspond to an even key, and collect them into a List.
 Focus: entrySet().stream(), filter(), map().
+
+11. you have list<Employee>. find duplicates in the list for the employee which has same name.
