@@ -9,9 +9,12 @@ import java.util.concurrent.locks.ReentrantLock;
 public class Client {
     public static void main(String[] args) {
         Count count = new Count();
+
         Lock lockForCount = new ReentrantLock();
+
         Adder adder = new Adder(count,lockForCount);
         Subtractor subtractor = new Subtractor(count,lockForCount);
+
         ExecutorService executorService = Executors.newCachedThreadPool();
         executorService.execute(adder);
         executorService.execute(subtractor);

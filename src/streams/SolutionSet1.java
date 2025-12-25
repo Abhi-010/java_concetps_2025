@@ -71,7 +71,7 @@ where the key is the word and the value is its frequency.
 Focus: Collectors.groupingBy(), Collectors.counting().
          */
 
-        System.out.println("Answer 4 : ");
+        System.out.println("Answer 5 : ");
 
         String str = "apple, banana, apple, cherry";
         String[] strArrary = str.split(" ");
@@ -84,6 +84,7 @@ Focus: Collectors.groupingBy(), Collectors.counting().
 6. Removing Duplicates and Sorting
 Given an array of integers int[] nums = {5, 2, 8, 2, 5, 1}, return a sorted list of unique numbers.
          */
+        System.out.println("Answer  6 : ");
         int[] nums = {5, 2, 8, 2, 5, 1};
         nums = Arrays.stream(nums).distinct().sorted().toArray();
         System.out.println(Arrays.toString(nums));
@@ -94,7 +95,7 @@ Given a List<String> of names, create a single String that joins them all togeth
 and enclosed in square brackets (e.g., "[John, Jane, Doe]").
 Focus: Collectors.joining(delimiter, prefix, suffix).
          */
-
+        System.out.println("Answer 7  : ");
         List<String> names = Arrays.asList("John", "Jane", "Doe");
 
         String collect1 = names.stream().collect(Collectors.joining(",", "[", "]"));
@@ -105,6 +106,7 @@ Focus: Collectors.joining(delimiter, prefix, suffix).
 Given a List<Student>, group the students by their "Grade" (e.g., A, B, C). The result should be a Map<String, List<Student>>.
 Focus: Collectors.groupingBy().
          */
+        System.out.println("Answer 8  : ");
 
         Student s1 = new Student("Abhi","A");
         Student s2 = new Student("Bob", "B");
@@ -122,7 +124,7 @@ Focus: Collectors.groupingBy().
 Given a List<Integer>, write a stream that returns true if all elements in the list are greater than 10.
 Focus: allMatch().
          */
-
+        System.out.println("Answer 9  : ");
         List<Integer> duplicates = Arrays.asList(3,4,5,9,2);
         boolean b = duplicates.stream().allMatch(i -> i > 10);
         System.out.println(b);
@@ -133,7 +135,7 @@ Focus: allMatch().
 Given a Map<Integer, String> map, extract all the values (Strings) that correspond to an even key, and collect them into a List.
 Focus: entrySet().stream(), filter(), map().
          */
-
+        System.out.println("Answer 10  : ");
         Map<Integer,String> map = new HashMap<>();
         map.put(1,"string1");
         map.put(2,"string2");
@@ -153,15 +155,24 @@ Focus: entrySet().stream(), filter(), map().
         employeeList.add(new Employee("Ganesh", 31, 1000));
         employeeList.add(new Employee("Ganesh", 33, 1000));
         employeeList.add(new Employee("Vara", 21, 100));
-
         employeeList.add(new Employee("Vara", 22, 100));
 
-        employeeList.forEach(employee -> System.out.print(employee + " "));
+       // employeeList.forEach(employee -> System.out.print(employee + " "));
 
         Map<String, Long> collect3 =
-                employeeList.stream().map(Employee::getName).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+                employeeList.stream().map(Employee::getName)
+                        .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
 
         collect3.forEach((key,value)-> System.out.println(key + " : "+ value));
+
+        System.out.println("----");
+        employeeList.stream().map(Employee::getName).forEach(System.out::println);
+
+        Map<String, List<Employee>> collect4 =
+                employeeList.stream()
+                        .collect(Collectors.groupingBy(Employee::getName));
+
+        collect4.forEach((key,value)-> System.out.println(key + " : "+ value));
 
 
     }

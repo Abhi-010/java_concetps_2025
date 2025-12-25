@@ -8,12 +8,11 @@ public class Adder implements Runnable {
 
     @Override
     public void run() {
-        for(int i = 1 ; i <=10000 ;i++){
+        for(int i = 1 ; i <= 10000 ;i++){
             int currentValue = count.getValue();
             int nextValue = currentValue + i;
 
             count.setValue(nextValue);
         }
-
     }
 }

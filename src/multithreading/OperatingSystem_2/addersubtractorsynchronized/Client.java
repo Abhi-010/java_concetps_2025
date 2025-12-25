@@ -1,4 +1,4 @@
-package multithreading.OperatingSystem_2.AdderSubtractor;
+package multithreading.OperatingSystem_2.addersubtractorsynchronized;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -6,16 +6,6 @@ import java.util.concurrent.TimeUnit;
 
 public class Client {
     public static void main(String[] args) {
-
-        /*
-
-        We are creating two tasks :
-        1. Adder, 2. Subtractor
-
-        And we are basically submitting these 2 tasks to ExecutorService by calling execute method.
-
-
-         */
         Count count = new Count();
         Adder adder = new Adder(count);
         Subtractor subtractor = new Subtractor(count);
@@ -25,8 +15,7 @@ public class Client {
         executorService.execute(subtractor);
 
         System.out.println("Before ShutDown " + count.getValue());
-        executorService.shutdown(); // Shutdown means : “I’m done submitting new tasks. Please finish all already-submitted tasks, then stop.”
-
+        executorService.shutdown();
         try{
             executorService.awaitTermination(10, TimeUnit.SECONDS);
 
@@ -36,12 +25,4 @@ public class Client {
         }
         System.out.println(count.getValue());
     }
-
-     /* Order of the execution of above code :
-        1. Submit Adder
-        2. Submit Subtractor
-        3. shutdown()   → "no more new tasks"
-        4. awaitTermination() → wait for both to finish
-        5. print count → FINAL correct value
-         */
 }

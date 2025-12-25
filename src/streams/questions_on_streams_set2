@@ -1,0 +1,49 @@
+11. Find the Average
+Given a List<Double>, calculate the average of all the numbers. Return it as an OptionalDouble.
+
+Focus: mapToDouble(), average().
+
+12. Concatenate Strings with a Filter
+Given a List<String>, filter out strings with length less than 3, and concatenate the remaining strings into a single comma-separated string.
+
+Focus: filter(), Collectors.joining(",").
+
+13. Find Any vs. Find First
+Given a List<String>, find any element that contains the letter "z". Return the result as an Optional<String>.
+
+Focus: filter(), findAny().
+
+14. Count Elements Matching a Criteria
+Given a List<Employee>, count how many employees have a salary greater than 50,000.
+
+Focus: filter(), count().
+
+15. Get the Distinct Characters from a List of Words
+Given a List<String> (e.g., ["Java", "Streams"]), find all the unique characters used across all words.
+
+Focus: map(s -> s.split("")), flatMap(Arrays::stream), distinct().
+
+16. Check for Non-Match
+Given a List<Integer>, verify that none of the numbers are negative.
+
+Focus: noneMatch().
+
+17. Transform a List to a Map
+Given a List<User>, create a Map<Integer, User> where the key is the userId and the value is the User object itself.
+
+Focus: Collectors.toMap().
+
+18. Skip and Limit
+Given a List<Integer>, skip the first 2 elements and then collect the next 3 elements into a new list.
+
+Focus: skip(), limit().
+
+19. Peek for Debugging
+Given a List<String>, convert them to lowercase, but use the peek method to print each element to the console before the conversion happens.
+
+Focus: peek().
+
+20. Summary Statistics
+Given a List<Integer>, use a single stream operation to get the count, sum, min, average, and max.
+
+Focus: mapToInt(), summaryStatistics().
