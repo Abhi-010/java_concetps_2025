@@ -1,10 +1,8 @@
 package streams;
 
-import java.util.Arrays;
-import java.util.List;
-import java.util.Optional;
-import java.util.OptionalDouble;
+import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
 public class SolutionSet2 {
     private static final List<String>  listOfWords = Arrays.asList("Stay", "Success","somewhere","work","big","smiling");
@@ -41,8 +39,77 @@ Focus: filter(), findAny().
         long count = listOfInt.stream().mapToInt(Integer::intValue).distinct().count() ;
         System.out.println(count);
 
+/*
+14. Count Elements Matching a Criteria
+Given a List<Employee>, count how many employees have a salary greater than 50,000.
+ */
 
 
+        Employee e1 = new Employee("Ganesh", 45,1004);
+        Employee e2 = new Employee("Sanjana", 25,2000);
+        Employee e3 = new Employee("Vara", 21,3005);
+
+        List<Employee> employeeList = Arrays.asList(e1,e2,e3);
+
+        long countOfEmployee =  employeeList.stream().map(employee -> employee.getSalary()).mapToInt(Integer::intValue).filter(i->i>1000).count() ;
+
+        System.out.println(countOfEmployee);
+
+
+        /*
+        15. Get the Distinct Characters from a List of Words
+Given a List<String> (e.g., ["Java", "Streams"]), find all the unique characters used across all words.
+Focus: map(s -> s.split("")), flatMap(Arrays::stream), distinct().
+         */
+
+        List<String> words = Arrays.asList("HELL", "HELLO");
+
+        List<String[]> uniqueChars = words.stream()
+                .map(word -> word.split(""))
+                .toList() ;
+
+        for(int i = 0 ; i < uniqueChars.size() ; i++){
+            String[] temp = uniqueChars.get(i);
+            for(int j = 0 ; j < temp.length ; j++){
+                System.out.print(temp[j] + " ");
+            }
+            System.out.println();
+        }
+
+
+//        List<String> uniqueChars = words.stream()
+//                .map(word -> word.split(""))    // Step 1: Stream<String[]>
+//                .flatMap(Arrays::stream)        // Step 2: Stream<String> (Flattened!)
+//                .distinct()                     // Step 3: Keep only H, E, L, O
+//                .toList();
+
+// Result: [H, E, L, O]
+
+        /*
+        Note :
+        Interviewer want to see if you understand that flatMap is the tool for removing nesting.
+        Whenever you see a "List within a List" or an "Array within a List" and you need to process the internal elements, flatMap is your answer.
+         */
+
+
+
+
+
+        /*
+        21. prefix sum
+ Given a List<Integer>, return prefix sum of that list :
+         */
+
+        List<Integer> list = Arrays.asList(1,2,3,4,5) ;
+
+        ArrayList<Object> collect = list.stream().collect(
+                ArrayList::new,   // supplier
+                (acc, x) -> {
+                    int last = acc.isEmpty() ? 0 : (int) acc.get(acc.size() - 1);
+                    acc.add(last + x);
+                },
+                List::addAll
+        );
 
     }
 }

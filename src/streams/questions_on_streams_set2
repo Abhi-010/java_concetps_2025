@@ -20,7 +20,6 @@ Focus: filter(), count().
 
 15. Get the Distinct Characters from a List of Words
 Given a List<String> (e.g., ["Java", "Streams"]), find all the unique characters used across all words.
-
 Focus: map(s -> s.split("")), flatMap(Arrays::stream), distinct().
 
 16. Check for Non-Match
@@ -47,3 +46,6 @@ Focus: peek().
 Given a List<Integer>, use a single stream operation to get the count, sum, min, average, and max.
 
 Focus: mapToInt(), summaryStatistics().
+
+21. prefix sum
+ Given a List<Integer>, return prefix sum of that list :
