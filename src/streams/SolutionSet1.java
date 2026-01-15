@@ -12,7 +12,9 @@ public class SolutionSet1 {
         convert the remaining strings to uppercase. Return the result as a List.
          */
         System.out.println("Answer 1 : ");
-        List<String> stringList = listOfWords.stream().filter(s -> s.startsWith("S")).toList();
+        //List<String> stringList = listOfWords.stream().filter(s -> (s.startsWith("S"))).toList();
+        List<String> stringList = listOfWords.stream().filter(s -> (s.startsWith("S"))).collect(Collectors.toList());
+        stringList.removeFirst();
         stringList.forEach(System.out::println);
 
         /*
