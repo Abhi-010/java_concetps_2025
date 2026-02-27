@@ -49,6 +49,7 @@ class frequency_hashmap{
         }
         hashMap.entrySet().forEach(System.out::println);
         System.out.println("Simple Frequency Map Using for Simplified for loop : ");
+
         hashMap = new HashMap<>();
         for (int j : A) {
             if (!hashMap.containsKey(j)) {

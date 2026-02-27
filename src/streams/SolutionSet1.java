@@ -38,7 +38,7 @@ public class SolutionSet1 {
         List<List<Integer>> listList = Arrays.asList(Arrays.asList(1,2,3),Arrays.asList(4,5,6));
 
         List<Integer> list1 = listList.stream()
-                                       .flatMap(temp-> temp.stream()).toList() ;
+                                       .flatMap(temp-> temp.stream() ).toList() ;
 
         list1.forEach(System.out::println);
 
@@ -75,9 +75,10 @@ Focus: Collectors.groupingBy(), Collectors.counting().
 
         System.out.println("Answer 5 : ");
 
-        String str = "apple, banana, apple, cherry";
+        String str = "apple banana apple cherry";
         String[] strArrary = str.split(" ");
-        Map<String, Long> collect = Arrays.stream(strArrary).collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        Map<String, Long> collect = Arrays.stream(strArrary)
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
 
         collect.forEach((key,value)-> System.out.println(key + " : "+ value));
 
@@ -168,7 +169,7 @@ Focus: entrySet().stream(), filter(), map().
         collect3.forEach((key,value)-> System.out.println(key + " : "+ value));
 
         System.out.println("----");
-        employeeList.stream().map(Employee::getName).forEach(System.out::println);
+       // employeeList.stream().map(Employee::getName).forEach(System.out::println);
 
         Map<String, List<Employee>> collect4 =
                 employeeList.stream()

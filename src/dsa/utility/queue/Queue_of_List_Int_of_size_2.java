@@ -1,9 +1,10 @@
-package dsa.utility;
+package dsa.utility.queue;
 
 import java.util.*;
 
 public class Queue_of_List_Int_of_size_2 {
     public static void main(String[] args) {
+
         PriorityQueue<List<Integer>> minHeap = new PriorityQueue<>(Comparator.comparing(l->l.get(1)));
 
         minHeap.add(Arrays.asList(2,1));
