@@ -1,0 +1,15 @@
+
+No, a separate object of the parent class is not created when you create an object of a child class. Instead, you get a single, unified object that is an instance of the child class but also incorporates all the properties and methods of its parent class.
+Stack Overflow
+Stack Overflow
+ +1
+Here is what happens during the instantiation process:
+Single Object: Only one object is allocated in memory, and it is an instance of the child class. This single object contains the instance variables (attributes) for both the child class and all of its parent classes in the hierarchy.
+Constructor Chaining: When the child class constructor is called, it automatically or explicitly calls the parent class's constructor(s) using a mechanism (like the super() call in Python/Java).
+Initialization: The purpose of calling the parent constructor is to ensure that the parent class's portion of the object's memory is properly initialized with default or specified values before the child class performs its own initialization.
+"Is-A" Relationship: An object of the child class "is a" kind of the parent class. For example, a Car (child) is a Vehicle (parent). The single Car object has all the characteristics of a Vehicle plus its own specific ones.
+Proof: You can verify this by checking the memory address or hash code of the object within both the parent and child constructors (e.g., using System.identityHashCode(this) in Java), which will be the same, confirming it is a single object.
+Stack Overflow
+Stack Overflow
+ +5
+In essence, the child object is a single, complete entity that is built upon the structure defined by its parent classes.

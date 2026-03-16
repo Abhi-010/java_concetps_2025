@@ -1,0 +1,74 @@
+*** collect() method in Streams ***
+
+--> collect() is a terminal operation
+--> It converts a Stream into some result
+--> The logic of how to collect is defined by a Collector
+
+Example :
+List<Integer> list =  stream.collect(Collectors.toList());
+
+Flow :
+Stream → collect() → Collector → Final Result
+
+Example result types:
+List
+Set
+Map
+String
+Grouping
+Partitioning
+Statistics
+
+
+Stream processes elements but does not store them. collect() is the way to materialize the result.
+
+*** What is Collectors? ****
+
+Collectors is simply a utility class that provides ready-made Collector implementations.
+
+Example methods :
+
+toList()
+toSet()
+toMap()
+groupingBy()
+partitioningBy()
+joining()
+counting()
+averagingInt()
+
+
+Example :
+List<Integer> list = stream.collect(Collectors.toList());
+
+*** groupingBy() ***
+
+groupingBy() is used when we want to:
+    1. Group elements based on a property
+    2. The result of groupingBy() is always a Map.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

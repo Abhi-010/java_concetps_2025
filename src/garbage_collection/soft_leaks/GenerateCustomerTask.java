@@ -26,8 +26,5 @@ public class GenerateCustomerTask implements Runnable {
             totalCustomerGenerated++;
             cm.getNextCustomer();
         }
-
-
-
     }
 }

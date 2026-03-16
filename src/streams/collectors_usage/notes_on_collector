@@ -10,9 +10,7 @@ List<String> list = stream.toList();
 
 
 Returns an unmodifiable list
-
 Cleaner and preferred for most cases
-
 With filtering and mapping
 List<Integer> result = numbers.stream()
         .filter(n -> n > 10)
@@ -29,10 +27,10 @@ From a collection
 List<String> list = collection.stream().toList();
 
 Summary
-Approach	Mutable	Java Version
-stream.toList()	❌	16+
-Collectors.toList()	⚠️ (implementation-dependent)	8+
-Collectors.toCollection(ArrayList::new)	✅	8+
+Approach	                                Mutable             	        Java Version
+stream.toList()	                                 ❌                         	16+
+Collectors.toList()	                        ⚠️ (implementation-dependent)	     8+
+Collectors.toCollection(ArrayList::new)      	✅	                             8+
 
 If you meant another language (e.g., Kotlin, Python, C# LINQ), tell me which one and I’ll tailor the answer.
 
