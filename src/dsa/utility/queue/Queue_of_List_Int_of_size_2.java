@@ -17,6 +17,7 @@ public class Queue_of_List_Int_of_size_2 {
         while (!minHeap.isEmpty()){
             List<Integer> t = minHeap.poll();
             System.out.println(t.getFirst() + ":" + t.getLast());
+
         }
 
 

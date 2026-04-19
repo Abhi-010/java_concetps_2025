@@ -16,20 +16,26 @@ public class iterate_hashmap {
         map.put('E', 5);
         map.put('F', 6);
 
+        for(Map.Entry<Character,Integer> entry : map.entrySet()){
+            Character key = entry.getKey() ;
+            Integer value = entry.getValue() ;
+            System.out.println(key + " : " + value);
+        }
+
         // just iterate on hashmap :
-        map.entrySet().forEach(System.out::println);
+      //  map.entrySet().forEach(System.out::println);
 
         // iterate and modify each value to double.
 
         //map.entrySet().stream().map((k,v)-> ) ;
 
-        for(Map.Entry<Character,Integer> entry : map.entrySet()){
-            map.put(entry.getKey(), entry.getValue()*2) ;
-        }
-
-        for(Map.Entry<Character,Integer> entry : map.entrySet()){
-            System.out.println(entry.getKey() + " : " + entry.getValue() );
-        }
+//        for(Map.Entry<Character,Integer> entry : map.entrySet()){
+//            map.put(entry.getKey(), entry.getValue()*2) ;
+//        }
+//
+//        for(Map.Entry<Character,Integer> entry : map.entrySet()){
+//            System.out.println(entry.getKey() + " : " + entry.getValue() );
+//        }
     }
 }
 

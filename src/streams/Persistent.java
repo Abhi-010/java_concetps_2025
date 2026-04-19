@@ -11,31 +11,26 @@ public class Persistent {
     //private static final String s = "Abhishek" ;
     public static void main(String[] args) {
         /*
-        Given a List<String>, filter out strings that start with the letter "S" (case-sensitive) and
+        Ques 1 : Given a List<String>, filter out strings that start with the letter "S" (case-sensitive) and
         convert the remaining strings to uppercase. Return the result as a List.
          */
+        System.out.println("Q1 : -------------------");
         List<String> ans = listOfWords.stream().filter(s->s.toUpperCase().charAt(0) == 'S').toList() ;
         ans.forEach(System.out::println);
-
-        System.out.println("-------------------");
-
-        /*
-        1. Stream
-        2. Collector
-        3. IntStream
-        4. LongStream
-
-
-         */
-
+        System.out.println("Q2 : -------------------");
 
         /*
-        extract the vowels from the string
+        Question 2 : Extract the vowels from the string
          */
 
         String s = "abhishekiiouou";
         System.out.println("Vowels");
-        List<Character> vow = s.chars().mapToObj(c->(char)c).filter(c-> "aeiou".indexOf(c) != -1).distinct().collect(Collectors.toList());
+        List<Character> vow =    s.chars()
+                                .mapToObj(c -> (char) c)
+                                .filter(c -> "aeiou".indexOf(c) != -1)
+                                .distinct().
+                                collect(Collectors.toList());
+
         vow.forEach(System.out::println);
         System.out.println("Vowels");
 
@@ -45,9 +40,21 @@ public class Persistent {
 
         long count = intStream.count();
         System.out.println(count);
-        System.out.println("-------------------------");
+        System.out.println("Q3 : -------------------------");
 
         List<Integer> integerList = Arrays.asList(4,5,10,101,21,89);
+
+        List<Integer> integerList1 =
+                integerList.stream().sorted((i1,i2)->Integer.compare(i1,i2)).toList();
+
+        System.out.println("Soring Using reverseOrder");
+        integerList1.stream().sorted().toList().forEach(System.out::println);
+        System.out.println("Soring Using reverseOrder");
+
+        System.out.println("IntegerList 1");
+        integerList1.forEach(System.out::println);
+        System.out.println("IntegerList 1");
+
 
         Comparator comparator = new Comparator() {
             @Override
@@ -75,12 +82,18 @@ public class Persistent {
         System.out.println("sorted list :");
 
 
+        /*
+        Q4 : Using a modifiable collection with Collectors.toCollection()
+        allows you to perform additional operations on the collected data after the stream processing is complete.
+         */
         ArrayList<Integer> collect = integerList.stream().collect(Collectors.toCollection(ArrayList::new));
+        // ArrayList<Integer> newCollect = new ArrayList<>(integerList) ;
         collect.add(9000);
         collect.forEach(System.out::println);
 
+        integerList = Arrays.asList(4,5,10,101,21,89);
         OptionalInt max1 = integerList.stream().filter(i->i > 1).mapToInt(i -> i).max();
-        System.out.println(max1.getAsInt());
+        System.out.println("max1.getAsInt() : " + max1.getAsInt());
 
         String s1 = "helloworldaaie";
         String[] a1 = s1.split("");
@@ -102,7 +115,7 @@ public class Persistent {
         flapList.forEach(System.out::println);
 
 
-
+        System.out.println("Q11 : -------------------------");
         //11. you have list<Employee>. find duplicates in the list for the employee which has same name.
 
         List<Employee> employeeList = new ArrayList<>();
@@ -113,15 +126,15 @@ public class Persistent {
         employeeList.add(new Employee("Vara", 22, 100));
 
         Map<String,Long> employeeG =
-                employeeList.stream().collect(Collectors.groupingBy(Employee::getName,Collectors.counting())) ;
+                employeeList.stream().collect(Collectors.groupingBy(Employee::getName,Collectors.counting()));
 
         employeeG.entrySet().forEach(System.out::println);
 
 
           /*
         10. Extracting Map Keys to a List
-Given a Map<Integer, String> map, extract all the values (Strings) that correspond to an even key, and collect them into a List.
-Focus: entrySet().stream(), filter(), map().
+    Given a Map<Integer, String> map, extract all the values (Strings) that correspond to an even key, and collect them into a List.
+    Focus: entrySet().stream(), filter(), map().
          */
         System.out.println("Answer 10  : ");
         Map<Integer,String> map = new HashMap<>();
@@ -198,6 +211,15 @@ Given an array of integers int[] nums = {5, 2, 8, 2, 5, 1}, return a sorted list
        List<Integer> sorted = listnum.stream().sorted().distinct().toList();
         sorted.stream().forEach(System.out::println);
 
+//        Map<Integer, Integer> collect1 = Arrays.stream(nums).boxed().collect(Collectors.toMap(i -> nums[i],  // Key: The element at index i
+//                i -> i));
+
+
+        System.out.println("new question : ");
+
+//        collect1.entrySet().forEach(System.out::println);
+
+        System.out.println("new question : ");
 
                /*
 5. Counting Occurrences (Frequency Map)
@@ -272,8 +294,73 @@ Focus: Collectors.groupingBy(), Collectors.counting().
         List<String> words = listOfWords.stream().filter(s41->s41.contains("s")).toList() ;
         words.forEach(System.out::println);
 
+        List<Integer> list = Arrays.asList(101,2,4,4,6,10);
+        OptionalInt max12 = list.stream().mapToInt(Integer::intValue).max() ;
+
+        Optional<Integer> max32 = list.stream().max(Comparator.reverseOrder());
+        max32.ifPresent(System.out::println);
+
+        System.out.println(max12.getAsInt());
+
+        List<String> names1 = List.of("Ram", "Shyam", "Mohan");
+
+        Map<String,Integer> map21 = names1.stream().collect(Collectors.toMap(name->name,name->name.length()));
+        map21.entrySet().forEach(System.out::println);
+
+        Map<Integer,List<String>> maptoString = names1.stream().collect(Collectors.groupingBy(String::length));
+
+        maptoString.entrySet().forEach(System.out::println) ;
 
 
+       list = Arrays.asList(1,2,3,4,3,2,5);
+
+        HashSet<Integer> set2 = new HashSet<>();
+
+        list.stream()
+                .filter(n -> !set2.add(n))
+                .forEach(System.out::println);
+
+        String str2 = "stress";
+
+       LinkedHashMap<Character,Long> linkedHashMap =  str2.chars()
+                .mapToObj(c -> (char)c)
+                .collect(Collectors.groupingBy(
+                        c -> c,
+                        LinkedHashMap::new,
+                        Collectors.counting()
+                )) ;
+
+       linkedHashMap.entrySet().forEach(System.out::println);
+
+        System.out.println("Linked Hash Map..");
+
+        Character ch =
+                str2.chars()
+                        .mapToObj(c -> (char)c)
+                        .collect(Collectors.groupingBy(
+                                c -> c,
+                                LinkedHashMap::new,
+                                Collectors.counting()
+                        ))
+                        .entrySet()
+                        .stream()
+                        .filter(e -> e.getValue() == 1)
+                        .findFirst()
+                        .get()
+                        .getKey();
+
+        System.out.println("Practice 29March");
+        int[] A = {4,6,8,10,11} ;
+        Arrays.stream(A).boxed().filter(i->i%2==0).forEach(System.out::println);
+
+        Arrays.stream(A).boxed().map(i->i*2).forEach(System.out::println);
+
+        int sum = Arrays.stream(A).sum();
+        System.out.println("sum : " + sum) ;
+
+         sum = Arrays.stream(A).reduce(0,(a,b1)->a+b1);
+
+        System.out.println(sum);
 
     }
 }

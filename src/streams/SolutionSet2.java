@@ -58,7 +58,12 @@ Given a List<Employee>, count how many employees have a salary greater than 50,0
 
         List<Employee> employeeList = Arrays.asList(e1,e2,e3);
 
-        long countOfEmployee =  employeeList.stream().map(employee -> employee.getSalary()).mapToInt(Integer::intValue).filter(i->i>1000).count() ;
+
+        long countz = employeeList.stream().filter(e->e.getSalary()>=2000).count();
+        System.out.println("countz :  " + countz);
+
+        long countOfEmployee =  employeeList.stream()
+                .map(employee -> employee.getSalary()).mapToInt(Integer::intValue).filter(i->i>1000).count() ;
 
         System.out.println(countOfEmployee);
 
@@ -70,6 +75,8 @@ Focus: map(s -> s.split("")), flatMap(Arrays::stream), distinct().
          */
 
         List<String> words = Arrays.asList("HELL", "HELLO");
+        words.stream().map(word->word.split("")).flatMap(Arrays::stream).distinct().count() ;
+
 
         List<String[]> uniqueChars = words.stream()
                 .map(word -> word.split(""))
