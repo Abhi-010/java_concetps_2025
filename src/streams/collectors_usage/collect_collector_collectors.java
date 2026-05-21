@@ -14,7 +14,7 @@ public class collect_collector_collectors {
         List<User> userList = Arrays.asList(new User(1L,"Abhi","KOL"),new User(2L,"Marc","KOL")) ;
 
         Map<Long, String> collect1 = userList.stream().collect(Collectors.toMap(User::getId, User::getName));
-       // collect1.forEach((key,value)->System.out.println(key + ":" + value));
+       collect1.forEach((key,value)->System.out.println(key + ":" + value));
 
 
         // groupingBy ??
@@ -111,7 +111,7 @@ public class collect_collector_collectors {
         // ** SummingInt
         list = Arrays.asList(3,41,2,3,4,5,1,1);
 
-        long sum = list.stream().collect(Collectors.summingInt(i->i.intValue())) ;
+        long sum = list.stream().mapToInt(i -> i).sum();
 
         list.stream().mapToInt(i -> i.intValue()).sum();
 

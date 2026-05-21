@@ -1,6 +1,7 @@
 package streams;
 
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -124,6 +125,25 @@ Focus: map(s -> s.split("")), flatMap(Arrays::stream), distinct().
                 },
                 List::addAll
         );
+
+
+        /*
+        22. First non repeating character in a string
+Given a String, find the first non-repeating character in it and return it as an Optional<Character>. If there is no non-repeating character, return an empty Optional.
+Focus: filter(), findFirst(), Collectors.groupingBy().
+         */
+
+        String s = "ava is a programming languagevspolue";
+        LinkedHashMap<Character, Long> charCountMap =
+        s.chars().mapToObj(c-> (char)c).collect(
+                Collectors.groupingBy(
+                        Function.identity(),
+                        LinkedHashMap::new, // Maintain insertion order
+                        Collectors.counting()
+                )
+        ) ;
+
+        s.chars().mapToObj(c -> (char)c).filter(c -> charCountMap.get(c) == 1).findFirst().ifPresent(System.out::println);
 
     }
 }

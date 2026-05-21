@@ -1,7 +1,6 @@
 package abstract_class_interfaces.interfaces.natwest;
 
-public class ConClass implements  inter2 {
-
+public class ImplInter3 implements inter3,inter2{
 
 
 }

@@ -29,6 +29,8 @@ public class Collect_GroupingBy {
 
         countUserPerRegion.entrySet().forEach(System.out::println);
 
+        System.out.println("** Collectors.mapping **");
+
         Map<String, List<String>> collect2 =
                 userList.stream().collect(Collectors.groupingBy(User::getRegion, Collectors.mapping(User::getName, Collectors.toList())));
 
@@ -44,9 +46,6 @@ public class Collect_GroupingBy {
 
         Map<Integer,List<String>> map1 = names.stream().collect(Collectors.groupingBy(String::length,Collectors.toList())) ;
         map1.entrySet().forEach(System.out::println);
-
-
-
 
     }
 }

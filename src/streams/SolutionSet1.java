@@ -13,8 +13,7 @@ public class SolutionSet1 {
          */
         System.out.println("Answer 1 : ");
         //List<String> stringList = listOfWords.stream().filter(s -> (s.startsWith("S"))).toList();
-        List<String> stringList = listOfWords.stream().filter(s -> (s.startsWith("S"))).collect(Collectors.toList());
-        stringList.removeFirst();
+        List<String> stringList = listOfWords.stream().filter(s -> (s.startsWith("S"))).map(s->s.toUpperCase()).collect(Collectors.toList());
         stringList.forEach(System.out::println);
 
         /*
@@ -64,6 +63,8 @@ public class SolutionSet1 {
 
         Optional<Employee> maxEmployee = employeeList.stream().max(Comparator.comparingInt(Employee::getSalary));
         maxEmployee.ifPresent(employee -> System.out.println(employee.getName()));
+
+      //  employeeList.stream().mapToInt(emp-> emp.getSalary()).max().ifPresent(System.out::println);
 
 
         /*
@@ -117,7 +118,10 @@ Focus: Collectors.groupingBy().
 
         List<Student> studentList = Arrays.asList(s1,s2,s3);
 
-        Map<String, List<Student>> collect2 = studentList.stream().collect(Collectors.groupingBy(student -> student.getGrade()));
+        Map<String, List<Student>> collect2 = studentList.stream().collect(Collectors.groupingBy(student -> student.getGrade())  );
+
+        Map<String, Long> collect21 = studentList.stream().collect(Collectors.groupingBy( student -> student.getGrade() , Collectors.counting())  );
+        collect21.entrySet().forEach(entry -> System.out.println(entry.getKey() + " : " + entry.getValue()));
 
         collect2.forEach((key,value)-> System.out.println(key + " : " + value.toString()));
 
@@ -128,9 +132,13 @@ Given a List<Integer>, write a stream that returns true if all elements in the l
 Focus: allMatch().
          */
         System.out.println("Answer 9  : ");
-        List<Integer> duplicates = Arrays.asList(3,4,5,9,2);
+        List<Integer> duplicates = Arrays.asList(3,4,5,9,2,2,2,2);
         boolean b = duplicates.stream().allMatch(i -> i > 10);
         System.out.println(b);
+
+        System.out.println("Answer 9.1 : ");
+        List<Integer> list2 = duplicates.stream().distinct().toList();
+        list2.forEach(System.out::println);
 
 
         /*
@@ -146,13 +154,13 @@ Focus: entrySet().stream(), filter(), map().
 
         List<String> stringList1 = map.entrySet().stream()
                                 .filter(entry -> entry.getKey() % 2 == 0)
-                                .map(Map.Entry::getValue).toList();
+                                .map(entry->entry.getValue()).toList();
 
         stringList1.forEach(System.out::println);
 
 
         //11. you have list<Employee>. find duplicates in the list for the employee which has same name.
-
+        System.out.println("Answer 11  : ");
         employeeList = new ArrayList<>();
         employeeList.add(new Employee("Abhisek", 34, 100));
         employeeList.add(new Employee("Ganesh", 31, 1000));
