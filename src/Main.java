@@ -11,5 +11,8 @@ public class Main {
             // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
             System.out.println("i = " + i);
         }
+
+        int compare = Integer.compare(5, 5);
+        System.out.println("compare : " + compare);
     }
 }

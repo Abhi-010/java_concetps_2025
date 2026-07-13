@@ -1,4 +1,4 @@
-package streams.collectors_usage;
+package streams.collectors_usage.entity;
 
 import java.util.Arrays;
 import java.util.List;
@@ -7,7 +7,7 @@ public class Department {
     String name;
     List<String> projects;
 
-    Department(String name, List<String> projects) {
+    public Department(String name, List<String> projects) {
         this.name = name;
         this.projects = projects;
     }

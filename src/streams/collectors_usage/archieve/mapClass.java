@@ -1,9 +1,8 @@
-package streams.collectors_usage;
+package streams.collectors_usage.archieve;
 
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.stream.IntStream;
 
 public class mapClass {
     private static final List<String> listOfWords = Arrays.asList("Stay", "Success","somewhere","work","big","smiling");

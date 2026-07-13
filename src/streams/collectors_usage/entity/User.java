@@ -1,4 +1,4 @@
-package streams.collectors_usage;
+package streams.collectors_usage.entity;
 
 public class User {
     private long id;

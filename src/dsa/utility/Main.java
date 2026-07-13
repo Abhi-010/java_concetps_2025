@@ -9,6 +9,29 @@ import java.util.concurrent.ConcurrentHashMap;
 public class Main {
     public static void main(String[] args) throws IOException {
 
+        int[][][] myArray = {
+                { {2, 4}, {7, 10} },
+                { {1, 5} },
+                { {6, 9} }
+        };
+
+        ArrayList<int[]> listOfArrays = new ArrayList<>();
+        for(int i = 0 ; i < myArray[0].length ; i++){
+            listOfArrays.add(myArray[0][i]);
+        }
+
+        for(int i = 0 ; i < listOfArrays.size() ; i++){
+            int[] temp = listOfArrays.get(i);
+            for(int j = 0 ; j < temp.length ; j++){
+                System.out.print(temp[j] + " ");
+            }
+            System.out.println();
+        }
+
+
+
+
+
         ArrayList<Integer> list = new ArrayList<>();
         list.add(1);
         list.add(5);

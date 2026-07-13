@@ -16,7 +16,7 @@ public class Sort2DArray {
         printArray(res);
     }
     public static int[][] sortByCol(int[][] A,int col){
-        Arrays.sort(A,(a,b)->b[col]-a[col]) ;
+        Arrays.sort(A,(a,b)->a[col]-b[col]) ;
         return A;
     }
 

@@ -121,6 +121,7 @@ Focus: Collectors.groupingBy().
         Map<String, List<Student>> collect2 = studentList.stream().collect(Collectors.groupingBy(student -> student.getGrade())  );
 
         Map<String, Long> collect21 = studentList.stream().collect(Collectors.groupingBy( student -> student.getGrade() , Collectors.counting())  );
+
         collect21.entrySet().forEach(entry -> System.out.println(entry.getKey() + " : " + entry.getValue()));
 
         collect2.forEach((key,value)-> System.out.println(key + " : " + value.toString()));
