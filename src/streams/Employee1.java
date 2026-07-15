@@ -1,14 +1,12 @@
 package streams;
 
 
-import java.util.Comparator;
-
-public class Employee implements Comparable<Employee> {
+public class Employee1 implements Comparable<Employee1> {
     private String name;
     private int age;
     private int salary;
 
-    public Employee(String name, int age, int salary) {
+    public Employee1(String name, int age, int salary) {
         this.name = name;
         this.age = age;
         this.salary = salary;
@@ -48,7 +46,7 @@ public class Employee implements Comparable<Employee> {
     }
 
     @Override
-    public int compareTo(Employee o) {
+    public int compareTo(Employee1 o) {
         if(o.getSalary() < this.getSalary()){
             return 1;
         }

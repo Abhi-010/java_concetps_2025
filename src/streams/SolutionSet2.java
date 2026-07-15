@@ -3,7 +3,6 @@ package streams;
 import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
-import java.util.stream.Stream;
 
 public class SolutionSet2 {
     private static final List<String>  listOfWords = Arrays.asList("Stay", "Success","somewhere","work","big","smiling");
@@ -53,18 +52,18 @@ Given a List<Employee>, count how many employees have a salary greater than 50,0
  */
 
 
-        Employee e1 = new Employee("Ganesh", 45,1004);
-        Employee e2 = new Employee("Sanjana", 25,2000);
-        Employee e3 = new Employee("Vara", 21,3005);
+        Employee1 e1 = new Employee1("Ganesh", 45,1004);
+        Employee1 e2 = new Employee1("Sanjana", 25,2000);
+        Employee1 e3 = new Employee1("Vara", 21,3005);
 
-        List<Employee> employeeList = Arrays.asList(e1,e2,e3);
+        List<Employee1> employee1List = Arrays.asList(e1,e2,e3);
 
 
-        long countz = employeeList.stream().filter(e->e.getSalary()>=2000).count();
+        long countz = employee1List.stream().filter(e->e.getSalary()>=2000).count();
         System.out.println("countz :  " + countz);
 
-        long countOfEmployee =  employeeList.stream()
-                .map(employee -> employee.getSalary()).mapToInt(Integer::intValue).filter(i->i>1000).count() ;
+        long countOfEmployee =  employee1List.stream()
+                .map(employee1 -> employee1.getSalary()).mapToInt(Integer::intValue).filter(i->i>1000).count() ;
 
         System.out.println(countOfEmployee);
 

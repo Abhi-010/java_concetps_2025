@@ -45,11 +45,11 @@ public class SolutionSet1 {
         Given a List<Employee>, find the Employee object with the highest salary. If the list is empty, return an empty Optional.
          */
         System.out.println("Answer 4 : ");
-        Employee e1 = new Employee("Ganesh", 45,100);
-        Employee e2 = new Employee("Sanjana", 25,200);
-        Employee e3 = new Employee("Vara", 21,300);
+        Employee1 e1 = new Employee1("Ganesh", 45,100);
+        Employee1 e2 = new Employee1("Sanjana", 25,200);
+        Employee1 e3 = new Employee1("Vara", 21,300);
 
-        List<Employee> employeeList = Arrays.asList(e1,e2,e3);
+        List<Employee1> employee1List = Arrays.asList(e1,e2,e3);
 
 //        Comparator<Employee> comparator = (emp1,emp2) -> {
 //            if(emp1.getSalary() > emp2.getSalary()){
@@ -61,8 +61,8 @@ public class SolutionSet1 {
 //            return 0;
 //        };
 
-        Optional<Employee> maxEmployee = employeeList.stream().max(Comparator.comparingInt(Employee::getSalary));
-        maxEmployee.ifPresent(employee -> System.out.println(employee.getName()));
+        Optional<Employee1> maxEmployee = employee1List.stream().max(Comparator.comparingInt(Employee1::getSalary));
+        maxEmployee.ifPresent(employee1 -> System.out.println(employee1.getName()));
 
       //  employeeList.stream().mapToInt(emp-> emp.getSalary()).max().ifPresent(System.out::println);
 
@@ -162,17 +162,17 @@ Focus: entrySet().stream(), filter(), map().
 
         //11. you have list<Employee>. find duplicates in the list for the employee which has same name.
         System.out.println("Answer 11  : ");
-        employeeList = new ArrayList<>();
-        employeeList.add(new Employee("Abhisek", 34, 100));
-        employeeList.add(new Employee("Ganesh", 31, 1000));
-        employeeList.add(new Employee("Ganesh", 33, 1000));
-        employeeList.add(new Employee("Vara", 21, 100));
-        employeeList.add(new Employee("Vara", 22, 100));
+        employee1List = new ArrayList<>();
+        employee1List.add(new Employee1("Abhisek", 34, 100));
+        employee1List.add(new Employee1("Ganesh", 31, 1000));
+        employee1List.add(new Employee1("Ganesh", 33, 1000));
+        employee1List.add(new Employee1("Vara", 21, 100));
+        employee1List.add(new Employee1("Vara", 22, 100));
 
        // employeeList.forEach(employee -> System.out.print(employee + " "));
 
         Map<String, Long> collect3 =
-                employeeList.stream().map(Employee::getName)
+                employee1List.stream().map(Employee1::getName)
                         .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
 
         collect3.forEach((key,value)-> System.out.println(key + " : "+ value));
@@ -180,9 +180,9 @@ Focus: entrySet().stream(), filter(), map().
         System.out.println("----");
        // employeeList.stream().map(Employee::getName).forEach(System.out::println);
 
-        Map<String, List<Employee>> collect4 =
-                employeeList.stream()
-                        .collect(Collectors.groupingBy(Employee::getName));
+        Map<String, List<Employee1>> collect4 =
+                employee1List.stream()
+                        .collect(Collectors.groupingBy(Employee1::getName));
 
         collect4.forEach((key,value)-> System.out.println(key + " : "+ value));
 

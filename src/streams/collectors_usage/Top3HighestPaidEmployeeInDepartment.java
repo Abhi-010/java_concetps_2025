@@ -1,5 +1,6 @@
 package streams.collectors_usage;
 
+import streams.HelperClass;
 import streams.collectors_usage.entity.Employee;
 
 import java.util.List;

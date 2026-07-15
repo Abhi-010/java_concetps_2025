@@ -1,4 +1,4 @@
-package streams.collectors_usage;
+package streams;
 
 import streams.collectors_usage.entity.Department;
 import streams.collectors_usage.entity.Employee;
@@ -13,7 +13,7 @@ public class HelperClass {
                 new Employee("Bob", 80000, null),
                 new Employee("Charlie", 90000, null),
                 new Employee("David", 60000, null),
-                new Employee("Eve", 75000, null)
+                new Employee("Alice", 75000, null)
         );
     }
 

@@ -3,7 +3,6 @@ package streams;
 import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 public class Persistent {
     private static final List<String> listOfWords = Arrays.asList("Stay", "Success","somewhere","work","big","smiling");
@@ -118,15 +117,15 @@ public class Persistent {
         System.out.println("Q11 : -------------------------");
         //11. you have list<Employee>. find duplicates in the list for the employee which has same name.
 
-        List<Employee> employeeList = new ArrayList<>();
-        employeeList.add(new Employee("Abhisek", 34, 100));
-        employeeList.add(new Employee("Ganesh", 31, 1000));
-        employeeList.add(new Employee("Ganesh", 33, 1000));
-        employeeList.add(new Employee("Vara", 21, 100));
-        employeeList.add(new Employee("Vara", 22, 100));
+        List<Employee1> employee1List = new ArrayList<>();
+        employee1List.add(new Employee1("Abhisek", 34, 100));
+        employee1List.add(new Employee1("Ganesh", 31, 1000));
+        employee1List.add(new Employee1("Ganesh", 33, 1000));
+        employee1List.add(new Employee1("Vara", 21, 100));
+        employee1List.add(new Employee1("Vara", 22, 100));
 
         Map<String,Long> employeeG =
-                employeeList.stream().collect(Collectors.groupingBy(Employee::getName,Collectors.counting()));
+                employee1List.stream().collect(Collectors.groupingBy(Employee1::getName,Collectors.counting()));
 
         employeeG.entrySet().forEach(System.out::println);
 
@@ -249,14 +248,14 @@ Focus: Collectors.groupingBy(), Collectors.counting().
         Given a List<Employee>, find the Employee object with the highest salary. If the list is empty, return an empty Optional.
          */
         System.out.println("Answer 4 : ");
-        Employee e1 = new Employee("Ganesh", 45,100);
-        Employee e2 = new Employee("Sanjana", 25,200);
-        Employee e3 = new Employee("Vara", 21,300);
+        Employee1 e1 = new Employee1("Ganesh", 45,100);
+        Employee1 e2 = new Employee1("Sanjana", 25,200);
+        Employee1 e3 = new Employee1("Vara", 21,300);
 
-        List<Employee> employeeList1 = Arrays.asList(e1,e2,e3);
+        List<Employee1> employee1List1 = Arrays.asList(e1,e2,e3);
 
-        Optional<Employee> employeeOptional =
-                employeeList1.stream().max(
+        Optional<Employee1> employeeOptional =
+                employee1List1.stream().max(
                         (e8,e7) -> Integer.compare(e8.getSalary(),e7.getSalary())
                 );
 
