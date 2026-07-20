@@ -1,4 +1,4 @@
-package streams;
+package streams.set1;
 
 import java.util.Arrays;
 import java.util.LinkedHashMap;

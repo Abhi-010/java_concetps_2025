@@ -1,7 +1,7 @@
 package streams.collectors_usage.archieve;
 
 import streams.EmployeeClass;
-import streams.collectors_usage.entity.User;
+import streams.entity.User;
 
 import java.util.Arrays;
 import java.util.List;

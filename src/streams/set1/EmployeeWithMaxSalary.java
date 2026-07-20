@@ -1,16 +1,15 @@
-package streams;
+package streams.set1;
 
-import streams.collectors_usage.entity.Employee;
+import streams.HelperClass;
+import streams.entity.Employee;
 
-import java.lang.reflect.Array;
 import java.util.*;
-import java.util.stream.IntStream;
 
 public class EmployeeWithMaxSalary {
     public static void main(String[] args) {
        List<Employee> employeeList = HelperClass.getEmployeesWithDepartments() ;
 
-       streams.collectors_usage.entity.Employee maxEmp =
+       streams.entity.Employee maxEmp =
                employeeList.stream().min( (emp1, emp2) -> Integer.compare(emp2.getSalary(), emp1.getSalary())).orElse(null) ;
 
         Employee maxEmp1 = employeeList.stream()

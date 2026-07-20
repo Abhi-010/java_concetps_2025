@@ -1,7 +1,7 @@
 package streams;
 
-import streams.collectors_usage.entity.Department;
-import streams.collectors_usage.entity.Employee;
+import streams.entity.Department;
+import streams.entity.Employee;
 
 import java.util.List;
 

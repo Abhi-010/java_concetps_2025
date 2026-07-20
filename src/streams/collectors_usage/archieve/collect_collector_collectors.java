@@ -1,7 +1,7 @@
 package streams.collectors_usage.archieve;
 
-import streams.collectors_usage.entity.Department;
-import streams.collectors_usage.entity.User;
+import streams.entity.Department;
+import streams.entity.User;
 
 import java.util.*;
 import java.util.stream.Collectors;

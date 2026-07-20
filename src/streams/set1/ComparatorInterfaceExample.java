@@ -1,6 +1,6 @@
-package streams;
+package streams.set1;
 
-import streams.collectors_usage.entity.Employee;
+import streams.entity.Employee;
 
 import java.util.ArrayList;
 import java.util.Arrays;

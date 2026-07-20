@@ -1,4 +1,4 @@
-package streams.collectors_usage.entity;
+package streams.entity;
 
 public class Employee {
     private String name ;

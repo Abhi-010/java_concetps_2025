@@ -1,4 +1,4 @@
-package streams.collectors_usage.entity;
+package streams.entity;
 
 import java.util.Arrays;
 import java.util.List;
