@@ -3,7 +3,7 @@ package streams.collectors_usage;
 import java.util.LinkedHashMap;
 import java.util.Locale;
 import java.util.function.Function;
-import java.util.stream.Collectors;
+import java.util.stream.*;
 
 public class NonRepeatingCharacter {
     
