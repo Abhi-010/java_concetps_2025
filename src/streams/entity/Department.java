@@ -24,4 +24,12 @@ public class Department {
 
                 return depts ;
     }
+
+    @Override
+    public String toString() {
+        return "Department{" +
+                "name='" + name + '\'' +
+                ", projects=" + projects +
+                '}';
+    }
 }

@@ -36,6 +36,8 @@ public class User {
 
     public static List<User> getListOfUser(){
         return List.of(new User(1,"Abhi","Kol"), new User(2,"Tom", "USA"),
-                new User(1,"Shyam","Indore"));
+                new User(1,"Shyam","Indore")
+                ,new User(3,"Abhi", "XCGC")
+        );
     }
 }

@@ -9,8 +9,9 @@ public class EmployeeWithMaxSalary {
     public static void main(String[] args) {
        List<Employee> employeeList = HelperClass.getEmployeesWithDepartments() ;
 
-       streams.entity.Employee maxEmp =
-               employeeList.stream().min( (emp1, emp2) -> Integer.compare(emp2.getSalary(), emp1.getSalary())).orElse(null) ;
+       Employee maxEmp =
+               employeeList.stream()
+                       .min( (emp1, emp2) -> Integer.compare(emp2.getSalary(), emp1.getSalary())).orElse(null) ;
 
         Employee maxEmp1 = employeeList.stream()
                 .max(Comparator.comparingInt(Employee::getSalary))

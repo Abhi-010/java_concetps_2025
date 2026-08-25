@@ -1,5 +1,6 @@
 package multithreading.AdderSubstractorUsingLambdas;
 
+import java.util.HashSet;
 import java.util.concurrent.*;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
@@ -65,6 +66,10 @@ public class Main {
         subtractorFuture.get();
 
         System.out.println(v.value);
+
+       // Future
+        //CompletableFuture
+        //HashSet
     }
 }
 

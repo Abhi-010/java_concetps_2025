@@ -1,4 +1,4 @@
-package streams.collectors_usage;
+package streams.set3;
 
 import streams.HelperClass;
 import streams.entity.Employee;
@@ -12,10 +12,8 @@ public class Top3HighestPaidEmployeeInDepartment {
 
         List<Employee> top3HighestPaidEmployees = employees.stream()
                 .filter(e -> e.getDepartment() != null && e.getDepartment().getName().equals("IT"))
-                .sorted((e1, e2) -> {
-//                            if(e1.getSalary().equals(e2.getSalary())) {
-//                                return e1.getName().compareTo(e2.getName());
-//                            }
+                .sorted(
+                        (e1, e2) -> {
                             return e2.getSalary().compareTo(e1.getSalary());
                         }
 

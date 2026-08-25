@@ -20,6 +20,7 @@ public class Client {
         executorService.execute(subtractor);
 
         executorService.shutdown();
+
         try{
             executorService.awaitTermination(100, TimeUnit.SECONDS);
         }

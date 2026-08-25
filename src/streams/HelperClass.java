@@ -3,6 +3,7 @@ package streams;
 import streams.entity.Department;
 import streams.entity.Employee;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class HelperClass {
@@ -18,12 +19,16 @@ public class HelperClass {
     }
 
     public static List<Employee> getEmployeesWithDepartments() {
-        return List.of(
+        return new ArrayList<>(List.of(
                 new Employee("Alice", 70000, new Department("IT", List.of("Cloud", "Security"))),
                 new Employee("Bob", 90000, new Department("IT", List.of("Recruiting"))),
                 new Employee("Charlie", 90000, new Department("IT", List.of("AI", "Cloud"))),
                 new Employee("David", 60000, new Department("Finance", List.of("Budgeting"))),
-                new Employee("Eve", 75000, new Department("IT", List.of("Cloud")))
-        );
+                new Employee("Eve", 75000, new Department("IT", List.of("Cloud"))),
+                new Employee("Shyam", 75000, new Department("IT", List.of("Cloud"))),
+                new Employee("Aniket", 75000, new Department("HR", List.of("Cloud"))),
+                new Employee("Anne", 75000, new Department("HR", List.of("Cloud"))),
+                new Employee("Guru", 75000, new Department("IT", List.of("Cloud")))
+        ));
     }
 }

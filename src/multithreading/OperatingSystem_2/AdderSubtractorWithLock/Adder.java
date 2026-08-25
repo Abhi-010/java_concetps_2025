@@ -14,11 +14,8 @@ public class Adder implements Runnable {
 
     @Override
     public void run() {
-
         for(int i = 1 ; i <=100 ;i++){
-
             lockForCount.lock();
-
             System.out.println("Adder has the lock " + i);
             int currentValue = count.getValue();
             try{
